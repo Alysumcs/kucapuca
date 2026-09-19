@@ -638,3 +638,11 @@ section{position:relative}
 .faq details[open] summary::after{content:"–"}
 .faq .a{padding:0 60px 24px 0;color:var(--muted);font-size:15.5px;line-height:1.7}
 @media (max-width:860px){.price-grid{grid-template-columns:1fr}.faq .a{padding-right:20px}}
+
+/* mapa: tlmený vzhľad OSM dlaždíc, aby sedeli k paletke webu */
+.leaflet-tile-pane{filter:grayscale(.52) sepia(.16) saturate(.88) brightness(1.04) contrast(.94)}
+.leaflet-control-attribution{background:rgba(251,250,247,.85);font-size:10.5px;color:var(--muted)}
+.leaflet-control-attribution a{color:var(--ink)}
+/* poistka, keby JS nebežal */
+:root{--header-h:104px}
+@media (max-width:860px){:root{--header-h:92px}}

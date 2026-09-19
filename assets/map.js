@@ -35,9 +35,11 @@
 
   var map = L.map('map', { scrollWheelZoom: false, zoomControl: true })
     .setView(villaOnly ? VILA : [44.27, 15.12], villaOnly ? 14 : 11);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  /* OpenStreetMap — bez API kľúča a bez registrácie.
+     Tlmený vzhľad rieši CSS filter na .leaflet-tile-pane (viď style.css). */
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
   map.on('click', function () { map.scrollWheelZoom.enable(); });
 

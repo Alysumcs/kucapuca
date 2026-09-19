@@ -5,6 +5,16 @@
 
   /* --- sticky header --- */
   var header = document.querySelector('.site-header');
+
+  /* skutočná výška hlavičky -> --header-h (hero sa pod ňu presne zasunie) */
+  function setHeaderH() {
+    if (!header) return;
+    document.documentElement.style.setProperty('--header-h', Math.round(header.offsetHeight) + 'px');
+  }
+  setHeaderH();
+  window.addEventListener('resize', setHeaderH);
+  window.addEventListener('load', setHeaderH);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(setHeaderH);
   function onScrollHeader() {
     if (header) header.classList.toggle('stuck', window.scrollY > 8);
   }
