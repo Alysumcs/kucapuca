@@ -1,0 +1,252 @@
+<!doctype html><html lang="sk"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="assets/mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<title>Ostrov Vir — pláže, mapa okolia a výlety | Villa Kuca Puca</title>
+<meta name="description" content="Interaktívna mapa ostrova Vir: pláže Pedinka, Jadro, Radovanjica a Slatina, centrum Viru, most na pevninu a výlety do Zadaru a Ninu. 30 km od Zadaru.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<link rel="canonical" href="https://kucapuca.sk/okolie">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Villa Kuca Puca">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:title" content="Ostrov Vir — pláže, mapa okolia a výlety">
+<meta property="og:description" content="Interaktívna mapa ostrova Vir: pláže, centrum, most na pevninu a výlety do Zadaru a Ninu.">
+<meta property="og:url" content="https://kucapuca.sk/okolie">
+<meta property="og:image" content="https://kucapuca.sk/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#EFEDE8">
+</head><body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Villa Kuca Puca">
+      <svg width="212" height="41" viewBox="0 0 330 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Villa Kuca Puca, otok Vir">
+        <g fill="none" stroke="#1B2A54" stroke-width="1.5" stroke-linecap="round" transform="translate(0,12) scale(1.25)">
+          <circle cx="16" cy="16" r="14.4"/>
+          <path d="M7 21.6V15.9a2.7 2.7 0 0 1 5.4 0v5.7"/><path d="M13.5 21.6V15.9a2.7 2.7 0 0 1 5.4 0v5.7"/>
+          <path d="M20 21.6V15.9a2.7 2.7 0 0 1 5.4 0v5.7"/><path d="M7 25.1q3.07-2.1 6.13 0t6.13 0t6.13 0"/>
+        </g>
+        <text x="52" y="31" fill="#1B2A54" font-family="Figtree,Helvetica,Arial,sans-serif" font-size="22" font-weight="600" letter-spacing="4.2">KUCA PUCA</text>
+        <text x="53" y="48" fill="#8C90A0" font-family="Figtree,Helvetica,Arial,sans-serif" font-size="10" font-weight="500" letter-spacing="3.6">VILLA · OTOK VIR</text>
+      </svg>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" data-nav="index">Domov</a>
+      <a href="apartmany.html" data-nav="apartmany">Apartmány</a>
+      <a href="okolie.html" data-nav="okolie">Ostrov Vir</a>
+      <a href="obsadenost.html" data-nav="obsadenost">Obsadenosť</a>
+      <a href="kontakt.html" data-nav="kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-ghost" href="apartmany.html">Apartmány
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn-gold" href="kontakt.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        Overiť dostupnosť
+      </a>
+    </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="wrap">
+    <nav class="mobile-nav">
+      <a href="index.html">Domov</a><a href="apartmany.html">Apartmány</a>
+      <a href="okolie.html">Ostrov Vir</a><a href="obsadenost.html">Obsadenosť</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a class="btn btn-primary" href="kontakt.html">Overiť dostupnosť</a>
+    </nav>
+  </div>
+</header>
+<section class="page-head pad-sm">
+  <div class="wrap">
+    <span class="pill rv">Kam na Vire</span>
+    <h1 class="rv">Malý ostrov, <em class="ac">krátky most</em> a zvyšok Dalmácie na dosah</h1>
+    <p class="lead rv" style="margin-top:24px">Vir leží v Severnej Dalmácii, asi 30 km severne od Zadaru, a s pevninou ho spája krátky most — žiadne trajekty, žiadne čakanie. Prídete autom až pred dom.</p>
+  </div>
+</section>
+
+<div class="zoomstage" style="margin-top:clamp(28px,4vw,52px)">
+  <div class="zoomframe" data-min="74">
+    <img src="img/vir-island.jpg" alt="Ostrov Vir z vtáčej perspektívy">
+    <div class="overlay"><p>Krištáľové more, borovice a výhľad na <em class="ac">Pag a Velebit</em>.</p></div>
+  </div>
+</div>
+
+<section class="pad">
+  <div class="wrap split-head">
+    <p class="label rv">Ostrov, ktorý sa nesnaží byť viac, než je</p>
+    <div class="big-statement rv">Zátoky, štrkové pláže a borovicové lesy po celom obvode ostrova. Hlavné mesto sa volá tiež <em>Vir</em> — a všetko podstatné máte do desiatich minút autom.</div>
+  </div>
+</section>
+
+<section class="pad-sm" id="mapa">
+  <div class="wrap">
+    <div class="split-head" style="margin-bottom:clamp(26px,3vw,44px)">
+      <p class="label rv">Mapa okolia</p>
+      <div class="big-statement rv">Kliknite na miesto v zozname a mapa vás tam <em>vezme</em>.</div>
+    </div>
+    <div class="map-filters rv">
+      <button class="chip on" data-cat="all">Všetko</button>
+      <button class="chip" data-cat="plaz">Pláže</button>
+      <button class="chip" data-cat="mesto">Na ostrove</button>
+      <button class="chip" data-cat="vylet">Výlety</button>
+    </div>
+    <div class="map-layout rv">
+      <div class="poi-list" id="poiList"></div>
+      <div id="map"></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="split-head" style="margin-bottom:clamp(30px,3.5vw,52px)">
+      <p class="label rv">Pláže v okolí</p>
+      <div class="big-statement rv">Od vily je to pár minút na <em>Pedinku</em>. Ostatné za chvíľu autom.</div>
+    </div>
+    <div class="dash-grid">
+      <div class="dash-card rv"><h3>Jadro</h3><div class="rule"></div>
+        <p>Najznámejšia pláž pri meste Vir. Štrkový podklad s piesočnatým dnom, požičovne člnov a skútrov, ležadlá, slnečníky a reštaurácie.</p>
+        <div class="foot"><span>Typ</span><span class="pill soft">štrk / piesok</span></div></div>
+      <div class="dash-card rv"><h3>Radovanjica</h3><div class="rule"></div>
+        <p>Kamenná pláž s plytkou vodou blízko mesta. Dosť miest, kde si medzi kúpaním niečo zahryznete.</p>
+        <div class="foot"><span>Typ</span><span class="pill soft">kameň</span></div></div>
+      <div class="dash-card rv"><h3>Slatina &amp; Lučica</h3><div class="rule"></div>
+        <p>Na severovýchode ostrova. Velika a Mala Slatina aj Lučica sú vhodné pre rodiny, s požičovňou vybavenia a kaviarňami.</p>
+        <div class="foot"><span>Typ</span><span class="pill soft">štrk / kameň</span></div></div>
+    </div>
+    <div class="gallery rv" style="margin-top:clamp(20px,2.4vw,32px)">
+      <figure><img src="img/plaz-zatoka.jpg" alt="Zátoka s červenými útesmi" loading="lazy"></figure>
+      <figure><img src="img/plaz-piesok.jpg" alt="Piesočná pláž na Vire" loading="lazy"></figure>
+      <figure><img src="img/plaz-strk.jpg" alt="Štrková pláž a pokojné more" loading="lazy"></figure>
+      <figure><img src="img/more-skaly.jpg" alt="Skaly a more pri západe slnka" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="statband">
+  <img src="img/pobrezie.jpg" alt="Pobrežie Viru" loading="lazy">
+  <div class="inner">
+    <div class="statcard rv"><span class="pill soft">Zadar</span><div class="num">30 <small>km</small></div></div>
+    <div class="statcard rv"><span class="pill soft">Pláží v okolí</span><div class="num">7 <small>+</small></div></div>
+    <div class="statcard rv"><span class="pill soft">Trajekt na ostrov</span><div class="num">0 <small>× most</small></div></div>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap story">
+    <div class="cols">
+      <h2 class="rv">Na bicykli okolo <em class="ac">súostrovia</em></h2>
+      <div class="rv">
+        <p class="lead">Nenáročná cyklotrasa vedie pozdĺž pobrežia okolo piesočnatých a kamienkových pláží lemovaných borovicovými lesmi, s výhľadom na Pag a Velebit. Dá sa napojiť aj na trasu smerom ku kráľovskému mestu Nin.</p>
+        <p class="lead" style="margin-top:16px">Pre aktívnejších je výzvou zdolať turistické chodníky v kamenistých pohoriach — alebo si jednoducho dať pomalú prechádzku po ostrove pri západe slnka.</p>
+      </div>
+    </div>
+    <div class="gallery rv" style="margin-top:clamp(20px,2.4vw,32px)">
+      <figure><img src="img/pobrezie-3.jpg" alt="Poľné cesty a pobrežie ostrova" loading="lazy"></figure>
+      <figure><img src="img/majak.jpg" alt="Maják na Vire" loading="lazy"></figure>
+      <figure><img src="img/most.jpg" alt="Most na ostrov Vir" loading="lazy"></figure>
+      <figure><img src="img/kastelina.jpg" alt="Virska kaštelina" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="marquee-stage rv">
+      <img src="img/vir-panorama.jpg" alt="Panoráma ostrova Vir" loading="lazy">
+      <div class="marquee">
+        <div class="track">
+          <span>MORE</span><i></i><span class="ac">borovice</span><i></i><span>MORE</span><i></i><span class="ac">borovice</span><i></i>
+          <span>MORE</span><i></i><span class="ac">borovice</span><i></i><span>MORE</span><i></i><span class="ac">borovice</span><i></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="split-head" style="margin-bottom:clamp(30px,3.5vw,52px)">
+      <p class="label rv">Chute a nákupy</p>
+      <div class="big-statement rv">Ryba, ktorá bola ráno ešte v mori — a večer už na vašom <em>grile</em>.</div>
+    </div>
+    <div class="story cols">
+      <div class="figure rv" style="border-radius:var(--r);overflow:hidden">
+        <img src="img/trznica.jpg" alt="Tržnica v Zadare" style="width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy">
+      </div>
+      <div class="rv">
+        <p class="lead">Zadarská tržnica v srdci mesta — miestnymi volaná „Pijaca“ — je trh pod holým nebom plný farieb, zvukov a vôní. Ovocie a zelenina od miestnych pestovateľov, vedľa rybí trh, kde rybári predávajú denný úlovok.</p>
+        <p class="lead" style="margin-top:16px">Na samotnom ostrove nájdete krčmičky s lokálnymi surovinami a plážové kaviarne — ideálne na pomalý obed medzi dvoma kúpaniami.</p>
+        <a class="btn btn-ghost" href="kontakt.html" style="margin-top:24px">Spýtať sa na tipy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="cta-final">
+      <h2 class="rv">Ostrov je pripravený. Zostáva <em class="ac">termín</em>.</h2>
+      <p class="lead rv">Pozrite si, kedy je vila voľná, a napíšte nám. Radi poradíme aj s trasou, plážami a reštauráciami.</p>
+    </div>
+    <div class="cta-cards">
+      <a class="cta-card rv" href="obsadenost.html">
+        <img src="img/hero-villa.jpg" alt="Vila s bazénom" loading="lazy">
+        <div class="t"><h3>Voľné <em class="ac">termíny</em></h3><span class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+      </a>
+      <a class="cta-card rv" href="apartmany.html">
+        <img src="img/apt-kuca.jpg" alt="Apartmán" loading="lazy">
+        <div class="t"><h3>Pozrieť <em class="ac">apartmány</em></h3><span class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="assets/map.js"></script>
+<script src="assets/lightbox.js"></script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <svg width="212" height="41" viewBox="0 0 330 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Villa Kuca Puca">
+          <g fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" transform="translate(0,12) scale(1.25)">
+            <circle cx="16" cy="16" r="14.4"/>
+            <path d="M7 21.6V15.9a2.7 2.7 0 0 1 5.4 0v5.7"/><path d="M13.5 21.6V15.9a2.7 2.7 0 0 1 5.4 0v5.7"/>
+            <path d="M20 21.6V15.9a2.7 2.7 0 0 1 5.4 0v5.7"/><path d="M7 25.1q3.07-2.1 6.13 0t6.13 0t6.13 0"/>
+          </g>
+          <text x="52" y="31" fill="#FFFFFF" font-family="Figtree,Helvetica,Arial,sans-serif" font-size="22" font-weight="600" letter-spacing="4.2">KUCA PUCA</text>
+          <text x="53" y="48" fill="#A9A49C" font-family="Figtree,Helvetica,Arial,sans-serif" font-size="10" font-weight="500" letter-spacing="3.6">VILLA · OTOK VIR</text>
+        </svg>
+        <p>Súkromná vila s dvomi apartmánmi na ostrove Vir. Bazén, kamenný gril, terasy s výhľadom — a more 600 metrov od dverí.</p>
+      </div>
+      <div class="f-col">
+        <h4>Vila</h4>
+        <a href="apartmany.html">Apartmány</a>
+        <a href="okolie.html">Ostrov Vir</a>
+        <a href="obsadenost.html">Obsadenosť</a>
+        <a href="index.html#vybavenie">Vybavenie</a>
+      </div>
+      <div class="f-col">
+        <h4>Kontakt</h4>
+        <a href="tel:+421904226700">+421 904 226 700</a>
+        <a href="mailto:hello@kucapuca.sk">hello@kucapuca.sk</a>
+        <a href="https://maps.google.com/?q=Sepunatka+11E,+23234+Vir,+Hrvatska" target="_blank" rel="noopener">Sepunatka 11/E, 23234 Vir</a>
+        <a href="kontakt.html">Napíšte nám</a>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© <span data-year>2026</span> Villa Kuca Puca · Marek Náhlik</span>
+      <span>Dizajn &amp; vývoj · Alysum</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body></html>

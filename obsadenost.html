@@ -1,0 +1,173 @@
+<!doctype html><html lang="sk"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="assets/mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<title>Obsadenosť apartmánov — Villa Kuca Puca, ostrov Vir</title>
+<meta name="description" content="Aktuálna obsadenosť apartmánov Kuca a Puca na ostrove Vir. Voľné termíny, predbežné opcie a obsadené dni v prehľadnom kalendári.">
+<meta name="robots" content="noindex">
+
+<link rel="canonical" href="https://kucapuca.sk/obsadenost">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Villa Kuca Puca">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:title" content="Obsadenosť apartmánov — Villa Kuca Puca">
+<meta property="og:description" content="Aktuálna obsadenosť apartmánov Kuca a Puca na ostrove Vir.">
+<meta property="og:url" content="https://kucapuca.sk/obsadenost">
+<meta property="og:image" content="https://kucapuca.sk/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#EFEDE8">
+</head><body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Villa Kuca Puca">
+      <svg width="212" height="41" viewBox="0 0 330 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Villa Kuca Puca, otok Vir">
+        <g fill="none" stroke="#1B2A54" stroke-width="1.5" stroke-linecap="round" transform="translate(0,12) scale(1.25)">
+          <circle cx="16" cy="16" r="14.4"/>
+          <path d="M7 21.6V15.9a2.7 2.7 0 0 1 5.4 0v5.7"/><path d="M13.5 21.6V15.9a2.7 2.7 0 0 1 5.4 0v5.7"/>
+          <path d="M20 21.6V15.9a2.7 2.7 0 0 1 5.4 0v5.7"/><path d="M7 25.1q3.07-2.1 6.13 0t6.13 0t6.13 0"/>
+        </g>
+        <text x="52" y="31" fill="#1B2A54" font-family="Figtree,Helvetica,Arial,sans-serif" font-size="22" font-weight="600" letter-spacing="4.2">KUCA PUCA</text>
+        <text x="53" y="48" fill="#8C90A0" font-family="Figtree,Helvetica,Arial,sans-serif" font-size="10" font-weight="500" letter-spacing="3.6">VILLA · OTOK VIR</text>
+      </svg>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" data-nav="index">Domov</a>
+      <a href="apartmany.html" data-nav="apartmany">Apartmány</a>
+      <a href="okolie.html" data-nav="okolie">Ostrov Vir</a>
+      <a href="obsadenost.html" data-nav="obsadenost">Obsadenosť</a>
+      <a href="kontakt.html" data-nav="kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-ghost" href="apartmany.html">Apartmány
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn-gold" href="kontakt.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        Overiť dostupnosť
+      </a>
+    </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="wrap">
+    <nav class="mobile-nav">
+      <a href="index.html">Domov</a><a href="apartmany.html">Apartmány</a>
+      <a href="okolie.html">Ostrov Vir</a><a href="obsadenost.html">Obsadenosť</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a class="btn btn-primary" href="kontakt.html">Overiť dostupnosť</a>
+    </nav>
+  </div>
+</header>
+<section class="page-head pad-sm">
+  <div class="wrap">
+    <span class="pill rv">Obsadenosť</span>
+    <h1 class="rv">Kedy je vila <em class="ac">voľná</em></h1>
+    <p class="lead rv" style="margin-top:24px">Kalendár oboch apartmánov. Šikmá polovica dňa znamená príchod alebo odchod — v taký deň sa dá nadviazať na predchádzajúcu rezerváciu.</p>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="cal-toolbar rv">
+      <div class="legend">
+        <b><i class="sw-free"></i>voľné</b>
+        <b><i class="sw-opt"></i>predbežná opcia</b>
+        <b><i class="sw-busy"></i>obsadené</b>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <button class="btn btn-ghost" id="toggleYear" style="padding:11px 20px;font-size:14px">Zobraziť celý rok</button>
+        <div class="yearpick">
+          <button id="prevY" aria-label="Predchádzajúci rok">‹</button>
+          <span class="y" id="yv">2026</span>
+          <button id="nextY" aria-label="Nasledujúci rok">›</button>
+        </div>
+      </div>
+    </div>
+    <div class="apt-cals rv" id="cals"></div>
+    <p class="lead rv" style="margin-top:24px;font-size:14.5px">Kalendár je informatívny. Termín vám potvrdíme e-mailom alebo telefonicky — napíšte nám a rezervujeme ho.</p>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="cta-final">
+      <h2 class="rv">Našli ste voľný <em class="ac">týždeň</em>?</h2>
+      <p class="lead rv">Napíšte nám termín a počet ľudí. Do 24 hodín potvrdíme dostupnosť a pošleme cenu na mieru.</p>
+    </div>
+    <div class="cta-cards">
+      <a class="cta-card rv" href="kontakt.html">
+        <img src="img/villa.jpg" alt="Vila" loading="lazy">
+        <div class="t"><h3>Rezervovať <em class="ac">termín</em></h3><span class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+      </a>
+      <a class="cta-card rv" href="apartmany.html">
+        <img src="img/apt-puca.jpg" alt="Apartmán Puca" loading="lazy">
+        <div class="t"><h3>Porovnať <em class="ac">apartmány</em></h3><span class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="assets/booking.js"></script>
+<script>
+(function () {
+  var year = new Date().getFullYear();
+  var allYear = false;
+  var cals = document.getElementById('cals');
+  var yv = document.getElementById('yv');
+  var tg = document.getElementById('toggleYear');
+
+  function render() {
+    yv.textContent = year;
+    KP.renderCalendars(cals, year, { allYear: allYear });
+    tg.textContent = allYear ? 'Zobraziť sezónu' : 'Zobraziť celý rok';
+  }
+  document.getElementById('prevY').onclick = function () { year--; render(); };
+  document.getElementById('nextY').onclick = function () { year++; render(); };
+  tg.onclick = function () { allYear = !allYear; render(); };
+  window.addEventListener('storage', function (e) { if (e.key === KP.KEY) render(); });
+  KP.boot(render);
+})();
+</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <svg width="212" height="41" viewBox="0 0 330 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Villa Kuca Puca">
+          <g fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" transform="translate(0,12) scale(1.25)">
+            <circle cx="16" cy="16" r="14.4"/>
+            <path d="M7 21.6V15.9a2.7 2.7 0 0 1 5.4 0v5.7"/><path d="M13.5 21.6V15.9a2.7 2.7 0 0 1 5.4 0v5.7"/>
+            <path d="M20 21.6V15.9a2.7 2.7 0 0 1 5.4 0v5.7"/><path d="M7 25.1q3.07-2.1 6.13 0t6.13 0t6.13 0"/>
+          </g>
+          <text x="52" y="31" fill="#FFFFFF" font-family="Figtree,Helvetica,Arial,sans-serif" font-size="22" font-weight="600" letter-spacing="4.2">KUCA PUCA</text>
+          <text x="53" y="48" fill="#A9A49C" font-family="Figtree,Helvetica,Arial,sans-serif" font-size="10" font-weight="500" letter-spacing="3.6">VILLA · OTOK VIR</text>
+        </svg>
+        <p>Súkromná vila s dvomi apartmánmi na ostrove Vir. Bazén, kamenný gril, terasy s výhľadom — a more 600 metrov od dverí.</p>
+      </div>
+      <div class="f-col">
+        <h4>Vila</h4>
+        <a href="apartmany.html">Apartmány</a>
+        <a href="okolie.html">Ostrov Vir</a>
+        <a href="obsadenost.html">Obsadenosť</a>
+        <a href="index.html#vybavenie">Vybavenie</a>
+      </div>
+      <div class="f-col">
+        <h4>Kontakt</h4>
+        <a href="tel:+421904226700">+421 904 226 700</a>
+        <a href="mailto:hello@kucapuca.sk">hello@kucapuca.sk</a>
+        <a href="https://maps.google.com/?q=Sepunatka+11E,+23234+Vir,+Hrvatska" target="_blank" rel="noopener">Sepunatka 11/E, 23234 Vir</a>
+        <a href="kontakt.html">Napíšte nám</a>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© <span data-year>2026</span> Villa Kuca Puca · Marek Náhlik</span>
+      <span>Dizajn &amp; vývoj · Alysum</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body></html>

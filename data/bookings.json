@@ -1,0 +1,74 @@
+[
+  {
+    "id": "s1",
+    "apt": "app1",
+    "from": "2026-06-13",
+    "to": "2026-06-20",
+    "name": "Rodina Horváthová",
+    "status": "busy",
+    "note": "6 osôb"
+  },
+  {
+    "id": "s2",
+    "apt": "app1",
+    "from": "2026-07-04",
+    "to": "2026-07-18",
+    "name": "Kováčovci",
+    "status": "busy",
+    "note": "dva týždne"
+  },
+  {
+    "id": "s3",
+    "apt": "app1",
+    "from": "2026-08-01",
+    "to": "2026-08-15",
+    "name": "Rodina Tóthová",
+    "status": "busy",
+    "note": ""
+  },
+  {
+    "id": "s4",
+    "apt": "app1",
+    "from": "2026-08-22",
+    "to": "2026-08-29",
+    "name": "Predbežná opcia",
+    "status": "opt",
+    "note": "čaká na potvrdenie"
+  },
+  {
+    "id": "s5",
+    "apt": "app2",
+    "from": "2026-06-20",
+    "to": "2026-06-27",
+    "name": "Novákovci",
+    "status": "busy",
+    "note": "4 osoby"
+  },
+  {
+    "id": "s6",
+    "apt": "app2",
+    "from": "2026-07-11",
+    "to": "2026-07-25",
+    "name": "Baloghovci",
+    "status": "busy",
+    "note": ""
+  },
+  {
+    "id": "s7",
+    "apt": "app2",
+    "from": "2026-08-08",
+    "to": "2026-08-22",
+    "name": "Rodina Šimková",
+    "status": "busy",
+    "note": ""
+  },
+  {
+    "id": "s8",
+    "apt": "app2",
+    "from": "2026-09-05",
+    "to": "2026-09-12",
+    "name": "Opcia — firma",
+    "status": "opt",
+    "note": "teambuilding"
+  }
+]

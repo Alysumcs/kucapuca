@@ -1,0 +1,70 @@
+<section class="page-head pad-sm">
+  <div class="wrap">
+    <span class="pill rv">Obsadenosť</span>
+    <h1 class="rv">Kedy je vila <em class="ac">voľná</em></h1>
+    <p class="lead rv" style="margin-top:24px">Kalendár oboch apartmánov. Šikmá polovica dňa znamená príchod alebo odchod — v taký deň sa dá nadviazať na predchádzajúcu rezerváciu.</p>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="cal-toolbar rv">
+      <div class="legend">
+        <b><i class="sw-free"></i>voľné</b>
+        <b><i class="sw-opt"></i>predbežná opcia</b>
+        <b><i class="sw-busy"></i>obsadené</b>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <button class="btn btn-ghost" id="toggleYear" style="padding:11px 20px;font-size:14px">Zobraziť celý rok</button>
+        <div class="yearpick">
+          <button id="prevY" aria-label="Predchádzajúci rok">‹</button>
+          <span class="y" id="yv">2026</span>
+          <button id="nextY" aria-label="Nasledujúci rok">›</button>
+        </div>
+      </div>
+    </div>
+    <div class="apt-cals rv" id="cals"></div>
+    <p class="lead rv" style="margin-top:24px;font-size:14.5px">Kalendár je informatívny. Termín vám potvrdíme e-mailom alebo telefonicky — napíšte nám a rezervujeme ho.</p>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="cta-final">
+      <h2 class="rv">Našli ste voľný <em class="ac">týždeň</em>?</h2>
+      <p class="lead rv">Napíšte nám termín a počet ľudí. Do 24 hodín potvrdíme dostupnosť a pošleme cenu na mieru.</p>
+    </div>
+    <div class="cta-cards">
+      <a class="cta-card rv" href="kontakt.html">
+        <img src="https://kucapuca.sk/wp-content/uploads/2023/06/uvod-willa.webp" alt="Vila" loading="lazy">
+        <div class="t"><h3>Rezervovať <em class="ac">termín</em></h3><span class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+      </a>
+      <a class="cta-card rv" href="apartmany.html">
+        <img src="https://kucapuca.sk/wp-content/uploads/2023/06/puca-aparttman-2.jpg" alt="Apartmán Puca" loading="lazy">
+        <div class="t"><h3>Porovnať <em class="ac">apartmány</em></h3><span class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="assets/booking.js"></script>
+<script>
+(function () {
+  var year = new Date().getFullYear();
+  var allYear = false;
+  var cals = document.getElementById('cals');
+  var yv = document.getElementById('yv');
+  var tg = document.getElementById('toggleYear');
+
+  function render() {
+    yv.textContent = year;
+    KP.renderCalendars(cals, year, { allYear: allYear });
+    tg.textContent = allYear ? 'Zobraziť sezónu' : 'Zobraziť celý rok';
+  }
+  document.getElementById('prevY').onclick = function () { year--; render(); };
+  document.getElementById('nextY').onclick = function () { year++; render(); };
+  tg.onclick = function () { allYear = !allYear; render(); };
+  window.addEventListener('storage', function (e) { if (e.key === KP.KEY) render(); });
+  render();
+})();
+</script>

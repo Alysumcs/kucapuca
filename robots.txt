@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /obsadenost.html
+
+Sitemap: https://kucapuca.sk/sitemap.xml
