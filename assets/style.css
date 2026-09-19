@@ -729,3 +729,4 @@ section{position:relative}
   .money-row{grid-template-columns:1fr;gap:10px}
   .money-row div{flex-direction:row;justify-content:space-between;align-items:baseline}
 }
+.poi-list{max-height:min(74vh,660px)}

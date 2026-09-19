@@ -100,8 +100,10 @@ Zvyšok kódu ostáva bez zmeny.
 `assets/map.js` — Leaflet (lokálne vo `vendor/`, verzia 1.9.4) + dlaždice priamo
 z OpenStreetMap. **Žiadne CDN, žiadny API kľúč, žiadna registrácia.**
 Tlmený krémový vzhľad robí CSS filter na `.leaflet-tile-pane`.
-Body záujmu vrátane súradníc sú v poli `POI` na začiatku súboru — pridáš alebo upravíš
-miesto jedným riadkom. Vzdialenosti od vily sa počítajú automaticky.
+Body záujmu sú v poli `POI` na začiatku súboru — pridáš alebo upravíš miesto jedným riadkom.
+Spolu 38 bodov: 21 pláží ostrova, 7 miest na Vire a 9 tipov na výlet (Zadar, Nin, ostrov Pag).
+Súradnice pochádzajú z OpenStreetMap (Overpass API), poloha vily z pôvodného webu.
+Vzdialenosti od vily sa počítajú automaticky a zoznam sa podľa nich radí.
 Na kontakte beží ten istý skript v režime `data-mode="vila"` (len mapka polohy).
 
 ## Fotky

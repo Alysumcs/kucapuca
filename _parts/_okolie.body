@@ -24,13 +24,13 @@
   <div class="wrap">
     <div class="split-head" style="margin-bottom:clamp(26px,3vw,44px)">
       <p class="label rv">Mapa okolia</p>
-      <div class="big-statement rv">Kliknite na miesto v zozname a mapa vás tam <em>vezme</em>.</div>
+      <div class="big-statement rv">21 pláží, 7 miest na ostrove a 9 tipov na výlet. Kliknite na miesto v zozname a mapa vás tam <em>vezme</em>.</div>
     </div>
     <div class="map-filters rv">
       <button class="chip on" data-cat="all">Všetko</button>
-      <button class="chip" data-cat="plaz">Pláže</button>
-      <button class="chip" data-cat="mesto">Na ostrove</button>
-      <button class="chip" data-cat="vylet">Výlety</button>
+      <button class="chip" data-cat="plaz">Pláže (21)</button>
+      <button class="chip" data-cat="mesto">Na ostrove (7)</button>
+      <button class="chip" data-cat="vylet">Výlety (9)</button>
     </div>
     <div class="map-layout">
       <div class="poi-list" id="poiList"></div>
@@ -43,7 +43,7 @@
   <div class="wrap">
     <div class="split-head" style="margin-bottom:clamp(30px,3.5vw,52px)">
       <p class="label rv">Pláže v okolí</p>
-      <div class="big-statement rv">Od vily je to pár minút na <em>Pedinku</em>. Ostatné za chvíľu autom.</div>
+      <div class="big-statement rv">Od vily je to pár minút na <em>Pedinku</em>. Ďalších dvadsať máte do štvrť hodiny.</div>
     </div>
     <div class="dash-grid">
       <div class="dash-card rv"><h3>Jadro</h3><div class="rule"></div>
@@ -69,7 +69,7 @@
   <img src="img/pobrezie.jpg" alt="Pobrežie Viru" loading="lazy">
   <div class="inner">
     <div class="statcard rv"><span class="pill soft">Zadar</span><div class="num">30 <small>km</small></div></div>
-    <div class="statcard rv"><span class="pill soft">Pláží v okolí</span><div class="num">7 <small>+</small></div></div>
+    <div class="statcard rv"><span class="pill soft">Pláží na ostrove</span><div class="num">21</div></div>
     <div class="statcard rv"><span class="pill soft">Trajekt na ostrov</span><div class="num">0 <small>× most</small></div></div>
   </div>
 </section>
