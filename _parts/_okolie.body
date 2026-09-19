@@ -32,7 +32,7 @@
       <button class="chip" data-cat="mesto">Na ostrove</button>
       <button class="chip" data-cat="vylet">Výlety</button>
     </div>
-    <div class="map-layout rv">
+    <div class="map-layout">
       <div class="poi-list" id="poiList"></div>
       <div id="map"></div>
     </div>
@@ -144,6 +144,6 @@
   </div>
 </section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="vendor/leaflet.js"></script>
 <script src="assets/map.js"></script>
 <script src="assets/lightbox.js"></script>

@@ -43,6 +43,8 @@
   }).addTo(map);
   map.on('click', function () { map.scrollWheelZoom.enable(); });
 
+  window.KPMAP = map;   // pomôcka na ladenie
+
   var ICON = { vila:'★', plaz:'≈', mesto:'●', vylet:'◆' };
   var markers = {};
   (villaOnly ? POI.filter(function (p) { return p.cat === 'vila' || p.id === 'pedinka' || p.id === 'centrum'; }) : POI).forEach(function (p) {
@@ -54,7 +56,24 @@
     m.bindPopup('<b>' + p.n + '</b><br>' + p.d + dist);
     markers[p.id] = m;
   });
-  if (!villaOnly) map.fitBounds(L.latLngBounds(POI.map(function (p) { return p.ll; })).pad(0.12));
+  var islandPOI = POI.filter(function (p) { return p.cat !== 'vylet'; });
+  if (!villaOnly) map.fitBounds(L.latLngBounds(islandPOI.map(function (p) { return p.ll; })).pad(0.14));
+
+  /* Leaflet si musí rozmery prepočítať, keď kontajner dostane skutočnú veľkosť
+     (reveal animácia, načítanie fontov, zmena okna, otočenie telefónu).
+     Bez toho sa vykreslí len časť dlaždíc a zvyšok ostane sivý. */
+  function refresh() { map.invalidateSize({ animate: false }); }
+  map.whenReady(refresh);
+  [60, 250, 600, 1200].forEach(function (t) { setTimeout(refresh, t); });
+  window.addEventListener('resize', refresh);
+  window.addEventListener('load', refresh);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
+  if (window.ResizeObserver) new ResizeObserver(refresh).observe(host);
+  if (window.IntersectionObserver) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) refresh(); });
+    }, { threshold: 0.01 }).observe(host);
+  }
 
   /* na kontakte iba mapka bez zoznamu */
   if (villaOnly) return;
@@ -85,7 +104,7 @@
       document.querySelectorAll('.map-filters .chip').forEach(function (x) { x.classList.remove('on'); });
       c.classList.add('on');
       renderList(c.dataset.cat);
-      var sel = c.dataset.cat === 'all' ? POI : POI.filter(function (p) { return p.cat === c.dataset.cat || p.id === 'vila'; });
+      var sel = c.dataset.cat === 'all' ? islandPOI : POI.filter(function (p) { return p.cat === c.dataset.cat || p.id === 'vila'; });
       map.flyToBounds(L.latLngBounds(sel.map(function (p) { return p.ll; })).pad(0.18), { duration: .8 });
     });
   });

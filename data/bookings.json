@@ -6,7 +6,13 @@
     "to": "2026-06-20",
     "name": "Rodina Horváthová",
     "status": "busy",
-    "note": "6 osôb"
+    "guests": 6,
+    "price": 1050,
+    "paid": 1050,
+    "email": "horvath@example.com",
+    "phone": "+421903111222",
+    "note": "",
+    "confirmedAt": "2026-02-11"
   },
   {
     "id": "s2",
@@ -15,7 +21,13 @@
     "to": "2026-07-18",
     "name": "Kováčovci",
     "status": "busy",
-    "note": "dva týždne"
+    "guests": 7,
+    "price": 2100,
+    "paid": 630,
+    "email": "kovac@example.com",
+    "phone": "+421905333444",
+    "note": "dva týždne",
+    "confirmedAt": "2026-03-02"
   },
   {
     "id": "s3",
@@ -24,7 +36,13 @@
     "to": "2026-08-15",
     "name": "Rodina Tóthová",
     "status": "busy",
-    "note": ""
+    "guests": 6,
+    "price": 2100,
+    "paid": 0,
+    "email": "toth@example.com",
+    "phone": "",
+    "note": "",
+    "confirmedAt": ""
   },
   {
     "id": "s4",
@@ -33,7 +51,13 @@
     "to": "2026-08-29",
     "name": "Predbežná opcia",
     "status": "opt",
-    "note": "čaká na potvrdenie"
+    "guests": 5,
+    "price": 1050,
+    "paid": 0,
+    "email": "",
+    "phone": "",
+    "note": "čaká na potvrdenie",
+    "confirmedAt": ""
   },
   {
     "id": "s5",
@@ -42,7 +66,13 @@
     "to": "2026-06-27",
     "name": "Novákovci",
     "status": "busy",
-    "note": "4 osoby"
+    "guests": 4,
+    "price": 910,
+    "paid": 910,
+    "email": "novak@example.com",
+    "phone": "+421907555666",
+    "note": "",
+    "confirmedAt": "2026-02-20"
   },
   {
     "id": "s6",
@@ -51,7 +81,13 @@
     "to": "2026-07-25",
     "name": "Baloghovci",
     "status": "busy",
-    "note": ""
+    "guests": 5,
+    "price": 1820,
+    "paid": 546,
+    "email": "balogh@example.com",
+    "phone": "",
+    "note": "",
+    "confirmedAt": "2026-03-15"
   },
   {
     "id": "s7",
@@ -60,7 +96,13 @@
     "to": "2026-08-22",
     "name": "Rodina Šimková",
     "status": "busy",
-    "note": ""
+    "guests": 4,
+    "price": 1820,
+    "paid": 0,
+    "email": "simkova@example.com",
+    "phone": "",
+    "note": "",
+    "confirmedAt": ""
   },
   {
     "id": "s8",
@@ -69,6 +111,12 @@
     "to": "2026-09-12",
     "name": "Opcia — firma",
     "status": "opt",
-    "note": "teambuilding"
+    "guests": 4,
+    "price": 910,
+    "paid": 0,
+    "email": "",
+    "phone": "",
+    "note": "teambuilding",
+    "confirmedAt": ""
   }
 ]

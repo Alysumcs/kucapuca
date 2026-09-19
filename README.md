@@ -57,12 +57,34 @@ Admin aj verejný kalendár čítajú to isté.
 Tlačidlo **Načítať zo súboru** zahodí lokálne zmeny a načíta znova `data/bookings.json`.
 **Export / Import JSON** sú na zálohu a prenos medzi počítačmi.
 
+**Platby**
+Pri každej rezervácii vedieš dohodnutú cenu a zaplatenú čiastku. Tlačidlo **Platba**
+otvorí rýchle voľby: záloha 30 %, doplatené v plnej výške, vynulovať alebo vlastná suma.
+Stav sa premietne do odznaku (nezaplatené / záloha / zaplatené), do pruhu pri rezervácii
+aj do prehľadu sezóny (dohodnuté / zaplatené / zostáva).
+Pri zadávaní termínu ti formulár sám navrhne cenu za noci aj výšku zálohy.
+
+**Potvrdenie pre hosťa**
+Tlačidlo **Potvrdenie** zloží text e-mailu aj SMS z údajov rezervácie — apartmán, termín,
+počet nocí a osôb, cena, zaplatené, zostatok, adresa a kontakt. Text sa dá pred odoslaním
+upraviť. Tlačidlá otvoria správu v tvojom e-mailovom klientovi (`mailto:`) alebo
+v aplikácii správ (`sms:`) s predvyplneným obsahom, prípadne text len skopíruješ.
+Odoslané potvrdenie si označíš a pri rezervácii zostane odznak s dátumom.
+
+Automatické odosielanie priamo z webu potrebuje backend — Resend alebo SendGrid na e-mail,
+Twilio na SMS. To je krok až po presune na hosting s databázou; šablóny v
+`assets/booking.js` (funkcia `sprava`) sa dajú použiť aj tam bez zmeny.
+
 **Formát záznamu**
 ```json
 { "id":"s1", "apt":"app1", "from":"2026-06-13", "to":"2026-06-20",
-  "name":"Rodina Horváthová", "status":"busy", "note":"6 osôb" }
+  "name":"Rodina Horváthová", "status":"busy",
+  "guests":6, "price":1050, "paid":1050,
+  "email":"horvath@example.com", "phone":"+421903111222",
+  "note":"", "confirmedAt":"2026-02-11" }
 ```
 `apt`: `app1` (Kuca) / `app2` (Puca) · `status`: `busy` (obsadené) / `opt` (predbežná opcia)
+`price` a `paid` sú v eurách · `confirmedAt` = dátum odoslania potvrdenia (prázdne = neodoslané)
 Deň príchodu a odchodu sa kreslí ako šikmá polovica bunky, takže v ten istý deň môže
 jeden hosť odísť a druhý prísť.
 
@@ -75,7 +97,9 @@ Zvyšok kódu ostáva bez zmeny.
 
 ## Mapa
 
-`assets/map.js` — Leaflet + dlaždice CARTO Positron (OpenStreetMap).
+`assets/map.js` — Leaflet (lokálne vo `vendor/`, verzia 1.9.4) + dlaždice priamo
+z OpenStreetMap. **Žiadne CDN, žiadny API kľúč, žiadna registrácia.**
+Tlmený krémový vzhľad robí CSS filter na `.leaflet-tile-pane`.
 Body záujmu vrátane súradníc sú v poli `POI` na začiatku súboru — pridáš alebo upravíš
 miesto jedným riadkom. Vzdialenosti od vily sa počítajú automaticky.
 Na kontakte beží ten istý skript v režime `data-mode="vila"` (len mapka polohy).
