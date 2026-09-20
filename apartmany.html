@@ -155,6 +155,74 @@
   </div>
 </section>
 
+<section class="pad-sm" id="galeria">
+  <div class="wrap">
+    <div class="split-head" style="margin-bottom:clamp(24px,3vw,40px)">
+      <p class="label rv">Fotogaléria</p>
+      <div class="big-statement rv">33 záberov z vily — izby, kuchyne, kúpeľne, bazén aj dom <em>zvonka</em>.</div>
+    </div>
+    <div class="map-filters rv" id="galFilters">
+      <button class="chip on" data-gal="all">Všetko (33)</button>
+      <button class="chip" data-gal="interier">Interiér (22)</button>
+      <button class="chip" data-gal="bazen">Bazén a terasa (6)</button>
+      <button class="chip" data-gal="dom">Dom zvonka (5)</button>
+    </div>
+    <div class="gallery rv" id="galGrid">
+      <figure data-cat="interier"><img src="img/gal-spalna-1.jpg" alt="Spálňa s manželskou posteľou" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-spalna-2.jpg" alt="Spálňa s manželskou posteľou" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-spalna-3.jpg" alt="Pripravená spálňa" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-spalna-4.jpg" alt="Jednolôžková izba" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-izba-1.jpg" alt="Izba s dvomi posteľami" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-izba-2.jpg" alt="Izba s dvomi posteľami" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-izba-3.jpg" alt="Izba s dvomi posteľami" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-izba-4.jpg" alt="Detská izba" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-izba-5.jpg" alt="Izba s dvomi posteľami" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-kuchyna-1.jpg" alt="Plne vybavená kuchyňa" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-kuchyna-2.jpg" alt="Kuchynská linka" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-obyvacka-1.jpg" alt="Obývacia časť s kuchyňou" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-obyvacka-2.jpg" alt="Obývacia časť s východom na terasu" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-obyvacka-3.jpg" alt="Obývacia časť s rozkladacím gaučom" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-jedalen-1.jpg" alt="Jedálenský kút" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-jedalen-2.jpg" alt="Jedálenský stôl" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-kupelna-1.jpg" alt="Kúpeľňa so sprchovým kútom" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-kupelna-2.jpg" alt="Kúpeľňa" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-chodba-1.jpg" alt="Chodba" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-chodba-2.jpg" alt="Vstupná chodba" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-satnik.jpg" alt="Vstavaná skriňa" loading="lazy"></figure>
+      <figure data-cat="interier"><img src="img/gal-vstup.jpg" alt="Vstup do apartmánu" loading="lazy"></figure>
+      <figure data-cat="bazen"><img src="img/gal-bazen-1.jpg" alt="Bazén pri dome" loading="lazy"></figure>
+      <figure data-cat="bazen"><img src="img/gal-bazen-vecer.jpg" alt="Bazén s večerným osvetlením" loading="lazy"></figure>
+      <figure data-cat="bazen"><img src="img/gal-bazen-2.jpg" alt="Bazén a spevnená terasa" loading="lazy"></figure>
+      <figure data-cat="bazen"><img src="img/gal-terasa-stol.jpg" alt="Terasa s posedením a výhľadom" loading="lazy"></figure>
+      <figure data-cat="bazen"><img src="img/gal-terasa-zavesy.jpg" alt="Krytá terasa pri bazéne" loading="lazy"></figure>
+      <figure data-cat="bazen"><img src="img/gal-hrozno.jpg" alt="Hrozno nad terasou" loading="lazy"></figure>
+      <figure data-cat="dom"><img src="img/gal-dom-1.jpg" alt="Vila zvonka" loading="lazy"></figure>
+      <figure data-cat="dom"><img src="img/gal-dom-2.jpg" alt="Vila z prednej strany" loading="lazy"></figure>
+      <figure data-cat="dom"><img src="img/gal-dom-3.jpg" alt="Vila a záhrada" loading="lazy"></figure>
+      <figure data-cat="dom"><img src="img/gal-dom-bazen.jpg" alt="Vila s bazénom" loading="lazy"></figure>
+      <figure data-cat="dom"><img src="img/gal-dron.jpg" alt="Vila z vtáčej perspektívy" loading="lazy"></figure>
+    </div>
+    <p class="price-note rv">Fotky sú z oboch apartmánov spoločne — ak chceš vidieť konkrétny apartmán, napíš nám a pošleme ďalšie zábery.</p>
+  </div>
+</section>
+
+<script>
+(function () {
+  var grid = document.getElementById('galGrid');
+  if (!grid) return;
+  document.querySelectorAll('#galFilters .chip').forEach(function (c) {
+    c.addEventListener('click', function () {
+      document.querySelectorAll('#galFilters .chip').forEach(function (x) { x.classList.remove('on'); });
+      c.classList.add('on');
+      var cat = c.dataset.gal;
+      grid.querySelectorAll('figure').forEach(function (f) {
+        f.hidden = cat !== 'all' && f.dataset.cat !== cat;
+      });
+    });
+  });
+})();
+</script>
+
 <section class="pad-sm" id="cennik">
   <div class="wrap">
     <div class="split-head" style="margin-bottom:clamp(30px,3.5vw,52px)">

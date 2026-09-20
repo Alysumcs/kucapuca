@@ -1,8 +1,9 @@
 /* Jednoduchý lightbox pre galérie */
 (function () {
   'use strict';
-  var imgs = [].slice.call(document.querySelectorAll('.gallery img'));
-  if (!imgs.length) return;
+  var all = [].slice.call(document.querySelectorAll('.gallery img'));
+  if (!all.length) return;
+  var imgs = all;      // aktuálne viditeľná sada, prepočíta sa pri otvorení
   var i = 0;
 
   var lb = document.createElement('div');
@@ -23,8 +24,20 @@
   function open(n) { show(n); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
   function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
 
-  imgs.forEach(function (im, n) {
-    im.addEventListener('click', function () { open(n); });
+  /* listujeme len v tej galérii, na ktorú sa kliklo, a len v práve viditeľných fotkách */
+  function visible(scope) {
+    return all.filter(function (im) {
+      if (im.closest('.gallery') !== scope) return false;
+      var f = im.closest('figure');
+      return !(f && f.hidden) && im.offsetParent !== null;
+    });
+  }
+  all.forEach(function (im) {
+    im.addEventListener('click', function () {
+      imgs = visible(im.closest('.gallery'));
+      var n = imgs.indexOf(im);
+      open(n < 0 ? 0 : n);
+    });
   });
   lb.querySelector('.close').onclick = close;
   lb.querySelector('.prev').onclick = function (e) { e.stopPropagation(); show(i - 1); };

@@ -108,10 +108,23 @@ Na kontakte beží ten istý skript v režime `data-mode="vila"` (len mapka polo
 
 ## Fotky
 
-`img/` — fotky z pôvodného webu prejdené cez Gemini: retuš svetla, farieb, ostrosti
-a rovných línií. Kompozícia ani obsah sa nemenili. Originálne výrezy zostali lokálne
-v `img/_src/` (do repozitára sa necommitujú, viď `.gitignore`).
+`img/` — fotky z pôvodného webu. Hero, apartmány a okolie prešli cez Gemini
+(retuš svetla, farieb, ostrosti a rovných línií; kompozícia sa nemenila).
+
+Galéria `gal-*.jpg` (33 záberov na stránke Apartmány) zatiaľ prešla len klasickou
+korekciou v Pillow — vyrovnanie expozície, jemné dofarbenie a doostrenie.
+**Na dokončenie:** pustiť aj tieto cez Gemini, keď bude kredit. Zdrojové výrezy
+v plnom rozlíšení sú pripravené v `img/_src/` (do repozitára sa necommitujú, viď `.gitignore`).
+
 `img/og.jpg` je náhľad pre sociálne siete (1200 × 630).
+
+## Galéria
+
+Na stránke Apartmány (`#galeria`) je 33 fotiek s filtrom Interiér / Bazén a terasa /
+Dom zvonka a s lightboxom (šípky, Esc). Lightbox listuje vždy len v tej galérii,
+na ktorú sa kliklo, a len v práve zobrazených fotkách.
+Popisy sú zámerne všeobecné — z podkladov sa nedalo spoľahlivo určiť, ktorá izba
+patrí ku ktorému apartmánu. Keď to Marek potvrdí, dá sa to rozdeliť.
 
 ## Logo
 
