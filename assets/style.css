@@ -844,3 +844,5 @@ section{position:relative}
   .gal-thumb{flex:0 0 70px;height:52px}
   .gal-nav{width:40px;height:40px}
 }
+.gal-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;pointer-events:none;
+  background:linear-gradient(to top,rgba(12,18,36,.55),rgba(12,18,36,0))}

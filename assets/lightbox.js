@@ -1,7 +1,7 @@
 /* Jednoduchý lightbox pre galérie */
 (function () {
   'use strict';
-  var all = [].slice.call(document.querySelectorAll('.gallery img, .car-item img'));
+  var all = [].slice.call(document.querySelectorAll('.gallery img, .car-item img, .gal-stage img'));
   if (!all.length) return;
   var imgs = all;      // aktuálne viditeľná sada, prepočíta sa pri otvorení
   var i = 0;
