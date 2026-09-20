@@ -129,3 +129,55 @@
     el.textContent = new Date().getFullYear();
   });
 })();
+
+/* --- kolotoč fotiek ------------------------------------------------------ */
+(function () {
+  'use strict';
+  document.querySelectorAll('.carousel').forEach(function (car) {
+    var track = car.querySelector('.car-track');
+    var items = [].slice.call(track.children);
+    var prev = car.querySelector('.car-btn.prev');
+    var next = car.querySelector('.car-btn.next');
+    var dots = car.querySelector('.car-dots');
+    if (!track || !items.length) return;
+
+    items.forEach(function (_, i) {
+      var d = document.createElement('button');
+      d.type = 'button';
+      d.setAttribute('aria-label', 'Fotka ' + (i + 1));
+      d.addEventListener('click', function () { scrollToItem(i); });
+      dots.appendChild(d);
+    });
+
+    function gutter() { return parseFloat(getComputedStyle(track).paddingLeft) || 0; }
+    function scrollToItem(i) {
+      i = Math.max(0, Math.min(items.length - 1, i));
+      track.scrollTo({ left: items[i].offsetLeft - gutter(), behavior: 'smooth' });
+    }
+    function current() {
+      var x = track.scrollLeft + gutter(), best = 0, dist = Infinity;
+      items.forEach(function (el, i) {
+        var d = Math.abs(el.offsetLeft - x);
+        if (d < dist) { dist = d; best = i; }
+      });
+      return best;
+    }
+    function sync() {
+      var i = current();
+      [].slice.call(dots.children).forEach(function (d, n) { d.classList.toggle('on', n === i); });
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    }
+    if (prev) prev.addEventListener('click', function () { scrollToItem(current() - 1); });
+    if (next) next.addEventListener('click', function () { scrollToItem(current() + 1); });
+
+    var t;
+    track.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(sync, 90); }, { passive: true });
+    window.addEventListener('resize', sync);
+    car.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { scrollToItem(current() - 1); }
+      if (e.key === 'ArrowRight') { scrollToItem(current() + 1); }
+    });
+    sync();
+  });
+})();

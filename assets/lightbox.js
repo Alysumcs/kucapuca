@@ -1,7 +1,7 @@
 /* Jednoduchý lightbox pre galérie */
 (function () {
   'use strict';
-  var all = [].slice.call(document.querySelectorAll('.gallery img'));
+  var all = [].slice.call(document.querySelectorAll('.gallery img, .car-item img'));
   if (!all.length) return;
   var imgs = all;      // aktuálne viditeľná sada, prepočíta sa pri otvorení
   var i = 0;
@@ -27,14 +27,14 @@
   /* listujeme len v tej galérii, na ktorú sa kliklo, a len v práve viditeľných fotkách */
   function visible(scope) {
     return all.filter(function (im) {
-      if (im.closest('.gallery') !== scope) return false;
+      if (im.closest('.gallery, .carousel') !== scope) return false;
       var f = im.closest('figure');
       return !(f && f.hidden) && im.offsetParent !== null;
     });
   }
   all.forEach(function (im) {
     im.addEventListener('click', function () {
-      imgs = visible(im.closest('.gallery'));
+      imgs = visible(im.closest('.gallery, .carousel'));
       var n = imgs.indexOf(im);
       open(n < 0 ? 0 : n);
     });

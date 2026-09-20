@@ -731,3 +731,49 @@ section{position:relative}
 }
 .poi-list{max-height:min(74vh,660px)}
 .gallery figure[hidden]{display:none}
+.gal-note{font-size:13.5px;color:var(--muted);margin:26px 0 0}
+
+/* ==========================================================================
+   Kolotoč fotiek (bazén, terasa, dom)
+   ========================================================================== */
+.carousel{position:relative;margin-top:clamp(28px,3.5vw,48px)}
+.car-track{
+  display:flex;gap:clamp(12px,1.4vw,18px);overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:4px calc((100vw - min(1280px,92vw)) / 2);
+  scroll-padding-inline-start:calc((100vw - min(1280px,92vw)) / 2);
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.car-track::-webkit-scrollbar{display:none}
+.car-item{
+  flex:0 0 clamp(260px,40vw,520px);margin:0;scroll-snap-align:start;
+  position:relative;border-radius:var(--r);overflow:hidden;background:var(--cream-2);cursor:zoom-in;
+}
+.car-item img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
+.car-item:hover img{transform:scale(1.05)}
+.car-item figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:40px 18px 15px;
+  color:#fff;font-size:14px;letter-spacing:-.005em;pointer-events:none;
+  background:linear-gradient(180deg,rgba(12,20,40,0),rgba(12,20,40,.78));
+}
+.car-btn{
+  position:absolute;top:calc(50% - 16px);transform:translateY(-50%);z-index:3;
+  width:52px;height:52px;border-radius:999px;border:1px solid var(--line);
+  background:#fff;color:var(--ink);cursor:pointer;box-shadow:var(--shadow-sm);
+  display:grid;place-items:center;transition:background .22s,color .22s,opacity .22s;
+}
+.car-btn svg{width:17px;height:17px}
+.car-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.car-btn[disabled]{opacity:.3;pointer-events:none}
+.car-btn.prev{left:max(14px,calc((100vw - min(1280px,92vw)) / 2 - 26px))}
+.car-btn.next{right:max(14px,calc((100vw - min(1280px,92vw)) / 2 - 26px))}
+.car-dots{display:flex;gap:7px;justify-content:center;margin-top:22px}
+.car-dots button{
+  width:7px;height:7px;padding:0;border:0;border-radius:999px;
+  background:rgba(27,42,84,.22);cursor:pointer;transition:width .3s var(--ease),background .3s;
+}
+.car-dots button.on{background:var(--ink);width:24px}
+@media (max-width:860px){
+  .car-btn{display:none}
+  .car-item{flex:0 0 82vw}
+}
