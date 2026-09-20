@@ -795,3 +795,14 @@ section{position:relative}
   .site-header .brand svg{height:42px;width:auto}
   .site-header .nav{padding:8px 10px 8px 14px}
 }
+
+/* --- dvojstĺpec pri apartmánoch a na kontakte ---------------------------- */
+.apt-split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,4vw,60px);align-items:start}
+.apt-split.rev{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.apt-figure{border-radius:var(--r);overflow:hidden}
+.apt-figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(26px,4vw,64px);align-items:start}
+@media (max-width:860px){
+  .apt-split,.apt-split.rev,.contact-grid{grid-template-columns:1fr}
+  .apt-split.rev .apt-figure{order:-1}   /* fotka nad textom aj pri obrátenom stĺpci */
+}
