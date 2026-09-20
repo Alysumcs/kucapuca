@@ -804,5 +804,43 @@ section{position:relative}
 .contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(26px,4vw,64px);align-items:start}
 @media (max-width:860px){
   .apt-split,.apt-split.rev,.contact-grid{grid-template-columns:1fr}
-  .apt-split.rev .apt-figure{order:-1}   /* fotka nad textom aj pri obrátenom stĺpci */
+  .apt-split.rev .apt-figure,.apt-split.rev .gal{order:-1}   /* fotka nad textom aj pri obrátenom stĺpci */
+}
+
+/* ── Mobilné menu: tlačidlo nesmie zdediť farbu textu z odkazu ─────────── */
+.mobile-nav a.btn{border-bottom:0;padding:15px 24px}
+.mobile-nav a.btn-primary{background:var(--ink);color:#fff}
+.mobile-nav a.btn-gold{background:var(--gold);color:var(--ink-2)}
+.mobile-nav a.btn-ghost{color:var(--ink)}
+
+/* ── Galéria apartmánu: hlavná fotka + pruh miniatúr ──────────────────── */
+.gal{position:relative}
+.gal-stage{position:relative;border-radius:var(--r);overflow:hidden;background:#e7e4dd}
+.gal-stage img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;cursor:zoom-in;
+  opacity:1;transition:opacity .28s var(--ease)}
+.gal-stage img.fade{opacity:0}
+.gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.55);background:rgba(27,42,84,.42);color:#fff;
+  display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(6px);
+  transition:background .25s var(--ease),transform .25s var(--ease)}
+.gal-nav:hover{background:rgba(27,42,84,.78);transform:translateY(-50%) scale(1.06)}
+.gal-nav svg{width:18px;height:18px}
+.gal-nav.prev{left:14px}
+.gal-nav.next{right:14px}
+.gal-count{position:absolute;top:14px;right:14px;z-index:2;
+  background:rgba(27,42,84,.5);color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.04em;
+  padding:6px 12px;border-radius:999px;backdrop-filter:blur(6px)}
+.gal-cap{position:absolute;left:14px;bottom:14px;right:70px;z-index:2;color:#fff;font-size:14px;
+  text-shadow:0 1px 14px rgba(10,16,32,.7);pointer-events:none}
+.gal-thumbs{display:flex;gap:9px;margin-top:10px;overflow-x:auto;scroll-behavior:smooth;
+  scrollbar-width:none;padding-bottom:2px}
+.gal-thumbs::-webkit-scrollbar{display:none}
+.gal-thumb{flex:0 0 84px;height:62px;padding:0;border:0;border-radius:11px;overflow:hidden;cursor:pointer;
+  background:none;position:relative;opacity:.55;transition:opacity .25s var(--ease)}
+.gal-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.gal-thumb:hover{opacity:.85}
+.gal-thumb.on{opacity:1;box-shadow:0 0 0 2px var(--gold)}
+@media (max-width:860px){
+  .gal-thumb{flex:0 0 70px;height:52px}
+  .gal-nav{width:40px;height:40px}
 }
